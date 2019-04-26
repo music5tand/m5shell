@@ -1,2 +1,2 @@
 # m5shell
-for the midterm project, creating own shell.
+A repository for a midterm project, implementing own shell.
