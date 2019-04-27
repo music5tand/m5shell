@@ -1,11 +1,15 @@
+## Editor               : MUSIC5TAND
+## LATEST MODIFIED DATE : 2019-04-28
+
+
 CC = gcc
 CFLAGS = -Wall
 
 SRC1 = main
 SRC2 = display_prompt
 SRC3 = manage_command
-SRC4 = my_cd
-SRC5 = my_mkdir
+SRC4 = quit_exit_shell
+SRC5 = my_cd
 SRC6 = my_ls
 
 all : m5shell
