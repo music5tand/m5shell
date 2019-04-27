@@ -5,6 +5,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#include <dirent.h>
+
 #define COM_MAX_LEN 100
 
 
@@ -12,17 +14,21 @@
 void display_prompt(void);
 
 
-// managing command.c
+// get_command.c
 void get_command(char *input);
 int parse_command(char *input, char* args[]);
+
+// exec_commad.c
+int check_builtin(char *command);
 int excute_command(char *args[], int background);
 
 // my_cd.c
-int run_cd(char *path);
+int run_cd(char *args);
 
 // my_ls.c
-void run_ls(char *path);
+void run_ls(char *args);
 
 // quit_exit_shell.c
 void let_me_out(void);
 void exit_shell(void);
+

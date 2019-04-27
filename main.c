@@ -12,13 +12,13 @@ int main(void){
 		int background = 0;
 		display_prompt();
 		get_command(input);
-		background = parse_command(input,args);
-		free(input);
-
-		if(!strcmp(args[0],"exit")|!strcmp(args[0],"quit")|!strcmp(args[0],"letmeout")){
-			exit_shell();
+		if(!strcmp(input,"\n")){
+			goto NO_INPUT;
 		}
+		background = parse_command(input,args);
 		execute_command(args,background);
+		free(input);
+		NO_INPUT:;
 	}
 	return 0;
 }
