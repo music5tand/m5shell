@@ -5,8 +5,9 @@
 #define KEEPRUNNING 1
 
 int main(int argc, const char*argv[]){
-	
-		display_prompt();	
-	
+		while(KEEPRUNNING){
+			display_prompt();
+			parse_command();
+		}
 	return 0;
 }
