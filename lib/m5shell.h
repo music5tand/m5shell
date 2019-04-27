@@ -5,8 +5,14 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#define COM_MAX_LEN 100
+
 
 // Get the current path and display the prompt.
 void display_prompt(void);
-char *get_command(void);
-char *parse_command(void);
+
+
+// managing command
+void get_command(char *input);
+int parse_command(char *input, char* args[]);
+void excute_command(void);
