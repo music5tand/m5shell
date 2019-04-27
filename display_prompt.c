@@ -23,7 +23,7 @@ void display_prompt(void){
 	}
 	getcwd(path,sizeof(path));
 	//printf("\n%s@%s:%s$",username, hostname, path);
-	printf("\n"GREEN);
+	printf(GREEN);
 	printf("%s@%s:",username,hostname);
 	printf(BLUE);
 	printf("%s$ ",path);
