@@ -1,7 +1,11 @@
 /* Editor               : MUSIC5TAND
-   LATEST MODIFIED DATE : 2019-04-26 */
+   LATEST MODIFIED DATE : 2019-04-27 */
 
 #include "lib/m5shell.h"
+
+#define GREEN "\x1b[32m"
+#define BLUE "\x1b[34m"
+#define RESET_COLOR "\x1b[0m"
 
 void display_prompt(void){
 	char *username;
@@ -17,13 +21,13 @@ void display_prompt(void){
 		perror("fail to get a hostname");
 		return;
 	}
-	//if(getcwd(path,sizeof(path))){
-		//perror("failed to get a current path");
-		//return;
-	//}
-	
 	getcwd(path,sizeof(path));
-	printf("%s@%s:%s>> \n",username, hostname, path);
+	//printf("\n%s@%s:%s$",username, hostname, path);
+	printf("\n"GREEN);
+	printf("%s@%s:",username,hostname);
+	printf(BLUE);
+	printf("%s$ ",path);
+	printf(RESET_COLOR);
 }
 
 
