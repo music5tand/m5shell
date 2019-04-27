@@ -16,6 +16,8 @@ void exit_shell(void){
         fgets(input, COM_MAX_LEN, stdin);
         if(strcmp(input,"Let me out\n")|strcmp(input,"let me out\n")){
             i = 0;
+            printf(";p bye!\n");
+
         }
     }
     exit(1);
