@@ -11,6 +11,7 @@
 	void display_prompt(void)
 	Displays the prompt on a console.
 	Lets users know the username, hostname and the current working directory which on he or she is working.
+	
 */
 void display_prompt(void){
 	char *username;

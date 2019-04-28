@@ -5,11 +5,13 @@
 
 
 void get_command(char *input){
-    fflush(stdout);
-    fgets(input, COM_MAX_LEN, stdin);
-    if(!strcmp(input,"Let me out\n")|!strcmp(input,"let me out\n")){
+    fflush(stdout);										/* empty the buffer. */
+    fgets(input, COM_MAX_LEN, stdin);					/* get commands from user. */
+	
+	/* check exit command */
+    if(!strcmp(input,"Let me out\n")|!strcmp(input,"let me out\n")){  	/* exit command */
 		let_me_out();
-	}else if(!strcmp(input,"exit\n")|!strcmp(input,"quit\n")){
+	}else if(!strcmp(input,"exit\n")|!strcmp(input,"quit\n")){			/* for a joke :<  */
         exit_shell();
     }
 }
@@ -19,11 +21,11 @@ int parse_command(char *input, char *args[]){
     int i = 0;
 	args[i] = strtok(input," \n");
 	while(args[i] != NULL){	
- 		if(strcmp(args[i],"&")==0){
-			args[i] = NULL;			// !!! delete the ampersand.
-			background = 1;
+ 		if(strcmp(args[i],"&")==0){		/* Check if it is a background command.  */
+			args[i] = NULL;				/* Delete an ampersand character. */
+			background = 1;				/* Toggle a backgorund */
 		}
-		args[++i] = strtok(NULL, " \n");
+		args[++i] = strtok(NULL, " \n");/* Delete a enter character. */
 	}
     return background;
 }

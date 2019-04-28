@@ -3,10 +3,20 @@
 
 #include "lib/m5shell.h"
 
+/* 
+    let you set free	
+*/
 void let_me_out(void){
     exit(1);
 }
 
+/* 
+    void exit_shell(void)
+	Just for a joke.
+    TO DO :
+     - Blocking signal, SIGINT.
+	
+*/
 void exit_shell(void){
  	char *input = (char*)malloc(COM_MAX_LEN*sizeof(char));
     int out = 1;

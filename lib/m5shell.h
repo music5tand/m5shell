@@ -22,6 +22,7 @@ int parse_command(char *input, char* args[]);
 
 // exec_commad.c
 int check_builtin(char *command);
+int check_exec(char *command);
 int execute_exec_command(char *args[], int background);
 int execute_built_in_command(char *args[], int background);
 int execute_command(char *args[], int background);

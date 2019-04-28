@@ -24,17 +24,18 @@ int check_builtin(char *command){
 
 int execute_exec_command(char *args[], int background){
     pid_t pid;
-    pid = fork();
+    pid = fork();                       /* Fork for running command on a child process. */
     if(pid<0){
         printf("fork() error.");
         return -1;
     }else if(pid == 0){
         execvp(args[0],args);
     }else{
-        if(!background){				// it is not a background process.
+        if(!background){				/* Foreground process. */
             waitpid(pid,NULL,0);
         }else{
-            background = 0;				// change it for another process.
+            background = 0;				/* Turn off the background mode.  */
+            return 0;
         }
     }
     return 0;
@@ -50,6 +51,7 @@ int execute_built_in_command(char *args[], int background){
 }
 
 int execute_command(char *args[], int background){
+    /* Check if it is a built in command or system command. */
     if(check_builtin(args[0])){
         execute_built_in_command(args,background);
     }else{

@@ -8,8 +8,7 @@ int main(void){
 	while(KEEPRUNNING){
    	 	char *input = (char*)malloc(COM_MAX_LEN*sizeof(char));
     	char *args[COM_MAX_LEN];
-		int background = 0;
-
+		int background = 0;						  /* For checking background. */
 		display_prompt();
 		get_command(input);
 		if(!strcmp(input,"\n")){ goto NO_INPUT; } /* no input to command line. ignore all the procedure. */
