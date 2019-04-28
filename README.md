@@ -20,5 +20,5 @@ Compile all the source codes using Makefile and execute ./m5shell.
     - ls
 2. programs that can be executed by exec family functions.
 
-## Need to be fixed Issues.
+## Issues need to be fixed.
 - There's no exception process for not found command.
