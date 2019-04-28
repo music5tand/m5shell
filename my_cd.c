@@ -22,4 +22,5 @@ int run_cd(char *args[]){
         chdir(getenv("HOME"));
         return 0;
     }
+    return 0;
 }
