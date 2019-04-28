@@ -22,3 +22,6 @@ Compile all the source codes using Makefile and execute ./m5shell.
 
 ## Issues need to be fixed.
 - There's no exception process for not found command.
+
+## License
+- MIT
