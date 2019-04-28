@@ -4,6 +4,7 @@
 
 CC = gcc
 CFLAGS = -Wall
+STRIP = strip
 
 SRC0 = main
 SRC1 = display_prompt

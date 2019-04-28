@@ -10,8 +10,8 @@ int run_cd(char *args[]){
             chdir("..");
         }else if(!strcmp(args[1],"/")){                     /* command line : cd / */
             chdir(getenv("HOME"));
-        }else{
-            if(chdir(args[1]) == -1){                       /* command line : cd (directory dose not exist.) */
+        }else{                                              /* command line : cd (directory dose not exist.) */
+            if(chdir(args[1]) == -1){
                 perror("m5sh ");
             }
         }
