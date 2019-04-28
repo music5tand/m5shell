@@ -7,6 +7,11 @@
 #define BLUE "\x1b[34m"
 #define RESET_COLOR "\x1b[0m"
 
+/* 
+	void display_prompt(void)
+	Displays the prompt on a console.
+	Lets users know the username, hostname and the current working directory which on he or she is working.
+*/
 void display_prompt(void){
 	char *username;
 	char hostname[256];
@@ -22,7 +27,9 @@ void display_prompt(void){
 		return;
 	}
 	getcwd(path,sizeof(path));
-	//printf("\n%s@%s:%s$",username, hostname, path);
+	/*
+		color the prompt.
+	*/
 	printf(GREEN);
 	printf("%s@%s:",username,hostname);
 	printf(BLUE);

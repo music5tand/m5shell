@@ -10,13 +10,14 @@ int main(void){
    	 	char *input = (char*)malloc(COM_MAX_LEN*sizeof(char));
     	char *args[COM_MAX_LEN];
 		int background = 0;
+
 		display_prompt();
 		get_command(input);
-		if(!strcmp(input,"\n")){
-			goto NO_INPUT;
-		}
+		if(!strcmp(input,"\n")){ goto NO_INPUT; } /* no input to command line. ignore all the procedure. */
+		
 		background = parse_command(input,args);
 		execute_command(args,background);
+		
 		free(input);
 		NO_INPUT:;
 	}

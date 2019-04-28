@@ -9,16 +9,21 @@ void let_me_out(void){
 
 void exit_shell(void){
  	char *input = (char*)malloc(COM_MAX_LEN*sizeof(char));
+    int out = 1;
     int i = 1;
-    while(i){
-        printf(";p nope!\n");
+    while(out){
+        if(i%3==0){
+            printf(";p nope! Type \"Let me out\".\n");
+        }else{
+            printf(";p nope!\n");
+        }
         fflush(stdout);
         fgets(input, COM_MAX_LEN, stdin);
-        if(strcmp(input,"Let me out\n")|strcmp(input,"let me out\n")){
-            i = 0;
-            printf(";p bye!\n");
-
+        if(!(strcmp(input,"Let me out\n"))|!(strcmp(input,"let me out\n"))){
+            out = 0;
+            printf(";9 bye!\n");
         }
+        i++;
     }
     exit(1);
 }

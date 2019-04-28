@@ -20,13 +20,18 @@ int parse_command(char *input, char* args[]);
 
 // exec_commad.c
 int check_builtin(char *command);
+int execute_exec_command(char *args[], int background);
+int execute_built_in_command(char *args[], int background);
 int excute_command(char *args[], int background);
 
+
+
+
 // my_cd.c
-int run_cd(char *args);
+int run_cd(char *args[]);
 
 // my_ls.c
-void run_ls(char *args);
+void run_ls(char *args[]);
 
 // quit_exit_shell.c
 void let_me_out(void);
