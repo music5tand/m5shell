@@ -35,8 +35,13 @@ void run_ls(char *args[]){
     if (!dp){
         perror(path);
     }
+    int i = 0;
     while((dirEnt = readdir(dp))!=NULL) {
-        printf("%s\n", dirEnt->d_name); 
+        printf("%25s", dirEnt->d_name);
+        i++;
+        if(i%4 == 0){
+            printf("\n");
+        } 
     }
     closedir(dp);
     return;
