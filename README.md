@@ -32,8 +32,6 @@ Compile all the source codes using Makefile and execute ./m5shell.
 ## Issues need to be fixed.
 - <b> NOTICE </b> : This program has no exception process for "Command Not Found".
                     If you type the command does not exist, it will be ............. :(
-
-## NOTICE
-
+                    
 ## License
 - MIT
