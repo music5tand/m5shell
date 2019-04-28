@@ -5,7 +5,6 @@
 
 
 void get_command(char *input){
-    fflush(stdout);										/* empty the buffer. */
     fgets(input, COM_MAX_LEN, stdin);					/* get commands from user. */
 	
 	/* check exit command */

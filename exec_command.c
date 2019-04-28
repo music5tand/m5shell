@@ -7,18 +7,18 @@ int check_exec(char *command){
     /*  TO DO :
         - check whether it is a valid system command
      */
-    char *path = getenv("PATH");
-    printf(" PATH : %s\n", path);
-    char *valid[2048];
-    int i = 0;
-    int is_valid = 0;
-    valid[i] = strtok(path,":");
-    while(path != NULL){	
-        if (!(strcmp(valid[i],command))){
-            is_valid = 1;
-        }
-        valid[++i] = strtok(NULL, ":");
-	}
+    // char *path = getenv("PATH");
+    // printf(" PATH : %s\n", path);
+    // char *valid[128];
+    // int i = 0;
+    int is_valid = 1;
+    // valid[i] = strtok(path,":");
+    // while(path != NULL){	
+    //     if (!(strcmp(valid[i],command))){
+    //         is_valid = 1;
+    //     }
+    //     valid[++i] = strtok(NULL, ":");
+	// }
     return is_valid;
 }
 int check_builtin(char *command){
