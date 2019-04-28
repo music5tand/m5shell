@@ -2,7 +2,7 @@
    LATEST MODIFIED DATE : 2019-04-28 */
 
 #include "lib/m5shell.h"
-#define NUM_OF_BUILT_IN_FUNCTION 7
+#define NUM_OF_BUILT_IN_FUNCTION 2
 
 int execute_exec_command(char *args[], int background){
 
@@ -10,7 +10,7 @@ int execute_exec_command(char *args[], int background){
 }
 
 int check_builtin(char *command){
-    char *built_in_list[NUM_OF_BUILT_IN_FUNCTION+1] = {"cd", "ls", "mkdir", "cat", "rm", "rmdir", "grep", NULL};
+    char *built_in_list[NUM_OF_BUILT_IN_FUNCTION+1] = {"cd", "ls", NULL};
     int built_in = 0;
     int i = 0;
     while(built_in_list[i]!=NULL){
@@ -27,18 +27,6 @@ int execute_built_in_command(char *args[], int background){
         run_cd(args);
     }else if(!strcmp(args[0],"ls")){
         run_ls(args);
-    }else if(!strcmp(args[0],"mkdir")){
-        
-    }else if(!strcmp(args[0],"cat")){
-
-    }else if(!strcmp(args[0],"rm")){
-
-    }else if(!strcmp(args[0],"rmdir")){
-
-    }else if(!strcmp(args[0],"grep")){
-
-    }else{
-        printf("Command not found.");
     }
     return 0;
 }
@@ -49,4 +37,5 @@ int execute_command(char *args[], int background){
     }else{
         execute_exec_command(args,background);
     }
+    return 0;
 }
