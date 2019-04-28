@@ -7,7 +7,19 @@ int check_exec(char *command){
     /*  TO DO :
         - check whether it is a valid system command
      */
-    return 1;
+    char *path = getenv("PATH");
+    printf(" PATH : %s\n", path);
+    char *valid[2048];
+    int i = 0;
+    int is_valid = 0;
+    valid[i] = strtok(path,":");
+    while(path != NULL){	
+        if (!(strcmp(valid[i],command))){
+            is_valid = 1;
+        }
+        valid[++i] = strtok(NULL, ":");
+	}
+    return is_valid;
 }
 int check_builtin(char *command){
     char *built_in_list[NUM_OF_BUILT_IN_FUNCTION+1] = {"cd", "ls", NULL};
@@ -54,9 +66,11 @@ int execute_command(char *args[], int background){
     /* Check if it is a built in command or system command. */
     if(check_builtin(args[0])){
         execute_built_in_command(args,background);
+        return 0;
     }else{
         if(check_exec(args[0])){
             execute_exec_command(args,background);
+            return 0;
         }else{
             printf("m5sh : Command not found. ");
             return -1;
