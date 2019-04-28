@@ -30,7 +30,10 @@ Compile all the source codes using Makefile and execute ./m5shell.
 2. programs that can be executed by exec family functions.
 
 ## Issues need to be fixed.
-- There's no exception process for not found command.
+- <b> NOTICE </b> : This program has no exception process for "Command Not Found".
+                    If you type the command does not exist, it will be ...................... :(
+
+## NOTICE
 
 ## License
 - MIT
