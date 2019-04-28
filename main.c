@@ -6,7 +6,6 @@
 
 int main(void){
 	while(KEEPRUNNING){
-		int pid;
    	 	char *input = (char*)malloc(COM_MAX_LEN*sizeof(char));
     	char *args[COM_MAX_LEN];
 		int background = 0;

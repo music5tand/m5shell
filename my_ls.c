@@ -3,17 +3,17 @@
 
 #include "lib/m5shell.h"
 void run_ls_long_format(char *path){
-    DIR *dp;
-    struct dirent *dirEnt;
-    struct stat *fileAttrib;
-    dp = opendir(path);
-    if (!dp){
-        perror(path);
-    }
-    while(dirEnt = readdir(dp)) {
-        printf("%s\n", dirEnt->d_name); 
-    }
-    closedir(dp);
+    // DIR *dp;
+    // struct dirent *dirEnt;
+    // // struct stat *fileAttrib;
+    // dp = opendir(path);
+    // if (!dp){
+    //     perror(path);
+    // }
+    // while((dirEnt = readdir(dp))!=NULL) {
+    //     printf("%s\n", dirEnt->d_name); 
+    // }
+    // closedir(dp);
 }
 
 void run_ls(char *args[]){
@@ -32,8 +32,9 @@ void run_ls(char *args[]){
     if (!dp){
         perror(path);
     }
-    while(dirEnt = readdir(dp)) {
+    while((dirEnt = readdir(dp))!=NULL) {
         printf("%s\n", dirEnt->d_name); 
     }
     closedir(dp);
+    return;
 }
