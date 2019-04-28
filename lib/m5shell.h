@@ -9,6 +9,7 @@
 #include <signal.h> /* for hadling and blocking signal */
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <sys/wait.h>
 
 #define COM_MAX_LEN 100 /* this shell is capable of proessing up to 100 characters. */ 
 
