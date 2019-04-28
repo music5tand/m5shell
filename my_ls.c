@@ -41,8 +41,9 @@ void run_ls(char *args[]){
         i++;
         if(i%4 == 0){
             printf("\n");
-        } 
+        }
     }
+    printf("\n");
     closedir(dp);
     return;
 }
