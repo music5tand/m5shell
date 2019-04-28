@@ -13,11 +13,17 @@ Compile all the source codes using Makefile and execute ./m5shell.
 ## Function
 1. built-in functions
   - cd
-    - cd 
-    - cd ..
-    - cd /
+    - change a current working directory.
+    - usage :
+        - cd .. (move to upper direcory)
+        - cd / (move to home)
   - ls
-    - ls
+    - list all the files in given the directory.
+    - usage :
+        - ls ( list all the files in the current working directory.)
+        - ls <directory name> ( list all the files in the <directory name>. )
+  - let me out
+    - you can exit the shell.
 2. programs that can be executed by exec family functions.
 
 ## Issues need to be fixed.
