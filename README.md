@@ -2,7 +2,7 @@
 A repository for a midterm project, implementing own shell.
 
 ## Prerequisites
-Linux/Unix 환경
+Linux/Unix environment.
 
 ## Installation
     git clone https://github.com/music5tand/m5shell.git
